@@ -1,5 +1,6 @@
 package Zoo.Animals;
 
+
 public class Dog extends Canine {
 
     public Dog(String name) {
@@ -43,4 +44,5 @@ public class Dog extends Canine {
         return true;
 
     }
+
 }

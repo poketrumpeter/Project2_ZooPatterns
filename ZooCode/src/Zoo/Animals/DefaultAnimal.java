@@ -35,4 +35,5 @@ public abstract class DefaultAnimal implements Animal{
 
         return status;
     }
+
 }

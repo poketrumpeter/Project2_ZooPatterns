@@ -1,3 +1,4 @@
+
 package Zoo.Actions;
 
 import Zoo.Animals.Animal;
@@ -12,4 +13,5 @@ public class ExerciseAnimals extends defaultAnimalTask{
     public boolean callAnimalTask(Animal animal) {
         return animal.Move();
     }
+
 }

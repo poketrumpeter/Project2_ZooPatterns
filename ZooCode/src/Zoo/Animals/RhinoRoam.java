@@ -9,4 +9,5 @@ public class RhinoRoam implements AnimalMovement{
         return true;
 
     }
+
 }

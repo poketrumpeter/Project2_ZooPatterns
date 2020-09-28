@@ -1,5 +1,6 @@
 package Zoo.Animals;
 
+
 public class Swim implements AnimalMovement{
 
     @Override
@@ -9,4 +10,5 @@ public class Swim implements AnimalMovement{
         return true;
 
     }
+
 }

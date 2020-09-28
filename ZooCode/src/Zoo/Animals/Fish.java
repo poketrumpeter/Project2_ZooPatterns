@@ -1,5 +1,6 @@
 package Zoo.Animals;
 
+
 public abstract class Fish extends DefaultAnimal{
 
     public Fish(AnimalMovement movement, String name) {

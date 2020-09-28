@@ -1,7 +1,7 @@
-package Zoo.Actions;
 
-import Zoo.Actions.defaultAnimalTask;
+package Zoo.Actions;
 import Zoo.Animals.Animal;
+
 
 public class WakeAnimals extends defaultAnimalTask {
 

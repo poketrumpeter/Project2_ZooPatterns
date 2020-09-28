@@ -2,6 +2,7 @@ package Zoo.Animals;
 
 public class CanineRoam implements AnimalMovement {
 
+
     @Override
     public boolean animalMove() {
 

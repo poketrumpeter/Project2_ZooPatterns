@@ -33,4 +33,5 @@ public class DogMovement extends CanineRoam{
             return false;
         }
     }
+
 }

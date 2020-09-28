@@ -55,4 +55,5 @@ public abstract class ZooEmployee {
     public void setDay(int day) {
         this.day = day;
     }
+
 }

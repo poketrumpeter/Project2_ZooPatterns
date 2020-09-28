@@ -2,6 +2,7 @@ package Zoo.Animals;
 
 public interface Animal {
 
+
     String getName(); // method to grab the name of an animal
 
     String getSpecies(); // Method to get the specific species of an animal i.e Dog
