@@ -75,7 +75,7 @@ public class ZooKeeper extends ZooEmployee implements Subject{
 
         notifyObservers(rollCall.getTaskName());
 
-        System.out.println(getName() + " the zookeeper goes to roll call the animals");
+        System.out.println("ZOOKEEPER: " + getName() + " the zookeeper goes to roll call the animals");
 
         System.out.println();
 
@@ -88,7 +88,7 @@ public class ZooKeeper extends ZooEmployee implements Subject{
 
         notifyObservers(feed.getTaskName());
 
-        System.out.println(getName() + " the zookeeper goes to feed the animals");
+        System.out.println("ZOOKEEPER: " + getName() + " the zookeeper goes to feed the animals");
 
         System.out.println();
 
@@ -101,7 +101,7 @@ public class ZooKeeper extends ZooEmployee implements Subject{
 
         notifyObservers(sleepAnimals.getTaskName());
 
-        System.out.println(getName() + " the zookeeper goes to put the animals to sleep");
+        System.out.println("ZOOKEEPER: " + getName() + " the zookeeper goes to put the animals to sleep");
 
         System.out.println();
 
@@ -114,7 +114,7 @@ public class ZooKeeper extends ZooEmployee implements Subject{
 
         notifyObservers(exercise.getTaskName());
 
-        System.out.println(getName() + " the zookeeper goes to Exercise the animals");
+        System.out.println("ZOOKEEPER: " + getName() + " the zookeeper goes to Exercise the animals");
 
         System.out.println();
 
