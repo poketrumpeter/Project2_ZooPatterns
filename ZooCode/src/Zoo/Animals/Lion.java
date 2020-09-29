@@ -18,7 +18,6 @@ public class Lion extends Feline{
         wake.append(" the lion is awoken and roars at the zookeeper");
         System.out.println(wake);
 
-
         return true;
     }
 

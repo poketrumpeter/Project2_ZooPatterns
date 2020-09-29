@@ -29,7 +29,6 @@ public class Cat extends Feline{
 
         System.out.println(eat);
 
-        System.out.println();
         return true;
     }
 
