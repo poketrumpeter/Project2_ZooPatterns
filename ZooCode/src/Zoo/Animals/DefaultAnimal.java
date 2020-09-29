@@ -1,5 +1,7 @@
 package Zoo.Animals;
 
+import Zoo.Animals.Movements.AnimalMovement;
+
 public abstract class DefaultAnimal implements Animal{
 
     AnimalMovement movement;
@@ -19,7 +21,7 @@ public abstract class DefaultAnimal implements Animal{
     }
 
     @Override
-    public boolean Move() {
+    public boolean move() {
 
         boolean status;
 
@@ -30,8 +32,6 @@ public abstract class DefaultAnimal implements Animal{
         System.out.print(msg);
 
         status =  movement.animalMove();
-
-        System.out.println();
 
         return status;
     }

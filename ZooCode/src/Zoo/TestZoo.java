@@ -1,10 +1,7 @@
 package Zoo;
 
-import Zoo.Animals.Animal;
-import Zoo.Animals.Dog;
-import Zoo.Animals.Shark;
+import Zoo.Animals.*;
 import Zoo.People.ZooAnnouncer;
-import Zoo.People.ZooEmployee;
 import Zoo.People.ZooFoodServer;
 import Zoo.People.ZooKeeper;
 
@@ -22,11 +19,19 @@ public class TestZoo {
         Animal shark1 = new Shark("Sally");
         animals.add(shark1);
 
+        Animal rhino1 = new Rhino("Rex");
+
+        Animal cat1 = new Cat("Chloe");
+
         boolean completed = false;
 
         while (!completed){
-            completed = dog1.Move(); //Testing functionality of Strategy Pattern
+            completed = dog1.move(); //Testing functionality of Strategy Pattern
         }
+
+        dog1.makeNoise();
+        cat1.Sleep();
+        rhino1.move();
 
         //Testing Zookeeeper Methods
         ZooKeeper keeper = new ZooKeeper("Fester");
@@ -50,7 +55,19 @@ public class TestZoo {
         server.serveFood();
 
 
+        //Testing Clock
+        Clock timeKeeper = new Clock();
 
+        timeKeeper.displayTime();
+
+        System.out.println();
+
+        for (int i = 0; i < 23; i++){
+
+            timeKeeper.displayTime();
+
+            timeKeeper.incrementTime();
+        }
 
     }
 

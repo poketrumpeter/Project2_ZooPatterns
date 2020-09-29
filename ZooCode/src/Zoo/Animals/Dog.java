@@ -1,6 +1,8 @@
 package Zoo.Animals;
 
 
+import Zoo.Animals.Movements.DogMovement;
+
 public class Dog extends Canine {
 
     public Dog(String name) {

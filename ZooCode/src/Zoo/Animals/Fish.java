@@ -1,6 +1,9 @@
 package Zoo.Animals;
 
 
+import Zoo.Animals.Movements.AnimalMovement;
+import Zoo.Animals.Movements.FishSwim;
+
 public abstract class Fish extends DefaultAnimal{
 
     public Fish(AnimalMovement movement, String name) {
@@ -25,6 +28,8 @@ public abstract class Fish extends DefaultAnimal{
         sleep.append(" slows its function but is still alert resting but not fully asleep");
 
         System.out.println(sleep);
+
+        System.out.println();
 
         return true;
 

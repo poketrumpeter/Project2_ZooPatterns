@@ -5,6 +5,7 @@ package Zoo.People;
 
 import Zoo.Actions.*;
 import Zoo.Animals.Animal;
+import Zoo.Clock;
 
 import java.util.ArrayList;
 
@@ -12,9 +13,21 @@ public class ZooKeeper extends ZooEmployee implements Subject{
 
     private ArrayList<Observer> observers;
 
+    private boolean wokeAnimals;
+    private boolean rollCalledAnimals;
+    private boolean fedAnimals;
+    private boolean exercisedAnimals;
+    private boolean putAnimalsToSleep;
+
     public ZooKeeper(String name) {
         super(name, "ZooKeeper");
         this.observers = new ArrayList<Observer>();
+
+        wokeAnimals = false;
+        rollCalledAnimals = false;
+        fedAnimals = false;
+        exercisedAnimals = false;
+        putAnimalsToSleep = false;
     }
 
     @Override
@@ -52,6 +65,7 @@ public class ZooKeeper extends ZooEmployee implements Subject{
         System.out.println();
 
         wake.performTask(animalList);
+
 
     }
 
@@ -107,4 +121,59 @@ public class ZooKeeper extends ZooEmployee implements Subject{
         exercise.performTask(animalList);
     }
 
+    public void performZooTasks(Clock clock, ArrayList<Animal> animalList) { //allows ZooEmployee to go through zookeeper methods
+
+        if(clock.getTime() == 9){
+
+            wakeAnimals(animalList);
+            wokeAnimals = true;
+
+        }
+
+        else if (clock.getTime() == 10){
+
+            rollCallAnimals(animalList);
+            rollCalledAnimals = true;
+
+        }
+
+        else if(clock.getTime() == 1){
+
+            feedAnimals(animalList);
+            fedAnimals = true;
+
+        }
+        else if(clock.getTime() == 3){
+
+            exerciseAnimals(animalList);
+            exercisedAnimals = true;
+
+        }
+
+        else if(clock.getTime() == 7){
+
+            sleepAnimals(animalList);
+            putAnimalsToSleep = true;
+
+        }
+
+    }
+
+    public boolean checkDone() {
+
+        if (wokeAnimals && rollCalledAnimals && fedAnimals && exercisedAnimals && putAnimalsToSleep){
+
+            System.out.println(getName() + " has completed all tasks");
+            return true;
+        }
+        return false;
+    }
+
+    public void taskReset() {
+        this.wokeAnimals = false;
+        this.rollCalledAnimals = false;
+        this.fedAnimals = false;
+        this.exercisedAnimals = false;
+        this.putAnimalsToSleep = false;
+    }
 }

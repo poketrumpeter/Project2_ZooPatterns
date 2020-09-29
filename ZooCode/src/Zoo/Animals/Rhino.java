@@ -1,9 +1,11 @@
 package Zoo.Animals;
 
 
+import Zoo.Animals.Movements.RhinoRoam;
+
 public class Rhino extends Pachyderm{
 
-    public Rhino(AnimalMovement movement, String name) {
+    public Rhino(String name) {
         super(new RhinoRoam(), name);
     }
 

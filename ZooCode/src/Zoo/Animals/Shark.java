@@ -1,5 +1,7 @@
 package Zoo.Animals;
 
+import Zoo.Animals.Movements.FishSwim;
+
 public class Shark extends Fish{
 
     public Shark(String name) {

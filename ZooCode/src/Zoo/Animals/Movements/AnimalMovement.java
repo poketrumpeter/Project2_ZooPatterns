@@ -1,4 +1,4 @@
-package Zoo.Animals;
+package Zoo.Animals.Movements;
 
 public interface AnimalMovement {
 

@@ -1,4 +1,4 @@
-package Zoo.Animals;
+package Zoo.Animals.Movements;
 
 public class CanineRoam implements AnimalMovement {
 
