@@ -1,8 +1,7 @@
-package Zoo.Animals;
+package Zoo.Animals.Movements;
 
 
 public class FishSwim implements AnimalMovement{
-
 
     @Override
     public boolean animalMove() {

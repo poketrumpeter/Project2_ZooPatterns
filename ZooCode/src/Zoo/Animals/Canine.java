@@ -1,5 +1,7 @@
 package Zoo.Animals;
 
+import Zoo.Animals.Movements.AnimalMovement;
+
 public abstract class Canine extends DefaultAnimal{
 
     public Canine(AnimalMovement movement, String name) {

@@ -9,7 +9,7 @@ public interface Animal {
 
     String getClassification(); //Method to get the specific Classification of an animal i.e Canine
 
-    boolean Move();
+    boolean move();
 
     boolean Sleep(); //method to have the animal go to sleep
 

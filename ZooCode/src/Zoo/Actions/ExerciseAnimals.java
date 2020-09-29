@@ -11,7 +11,7 @@ public class ExerciseAnimals extends defaultAnimalTask{
 
     @Override
     public boolean callAnimalTask(Animal animal) {
-        return animal.Move();
+        return animal.move();
     }
 
 }

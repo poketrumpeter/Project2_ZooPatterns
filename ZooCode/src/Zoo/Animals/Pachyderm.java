@@ -1,6 +1,8 @@
 package Zoo.Animals;
 
 
+import Zoo.Animals.Movements.AnimalMovement;
+
 public abstract class Pachyderm extends DefaultAnimal{
 
     public Pachyderm(AnimalMovement movement, String name) {

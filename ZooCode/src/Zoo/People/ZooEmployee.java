@@ -1,5 +1,7 @@
 package Zoo.People;
 
+import Zoo.Clock;
+
 public abstract class ZooEmployee {
 
     /*
@@ -37,6 +39,7 @@ public abstract class ZooEmployee {
 
     //simply prints out the day of arrival
     public void arrive(String time) {
+
         StringBuffer arrive = new StringBuffer(getName());
         arrive.append(" the ");
         arrive.append(this.job);
