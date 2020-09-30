@@ -37,7 +37,7 @@ public abstract class ZooEmployee {
         return day;
     }
 
-    //simply prints out the day of arrival
+    //simply prints out the day and time of arrival
     public void arrive(String time) {
 
         StringBuffer arrive = new StringBuffer(getName());

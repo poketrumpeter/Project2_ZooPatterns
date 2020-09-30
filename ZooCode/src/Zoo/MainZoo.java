@@ -18,7 +18,7 @@ public class MainZoo {
         //https://www.dev2qa.com/how-to-write-console-output-to-text-file-in-java/
 
         PrintStream originalOutput = System.out;
-        PrintStream fileOutput = new PrintStream("dayatthezoo.out");
+        PrintStream fileOutput = new PrintStream("../dayatthezoo.out");
 
         System.setOut(fileOutput);
 
@@ -131,6 +131,8 @@ public class MainZoo {
             System.out.println();
 
             keeper.setDay(i+1);
+            announcer.setDay((i+1));
+            server.setDay(i+1);
 
             //Have people Arrive to Zoo
             server.arrive(timeKeeper.getFullTime());

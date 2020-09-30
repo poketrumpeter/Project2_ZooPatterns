@@ -42,6 +42,8 @@ public class ZooFoodServer extends ZooEmployee implements Subject{
         }
     }
 
+    //Observer Pattern function allowing the Foodserver to notify ist observers that it is serving food.
+
     @Override
     public void notifyObservers(String task) {
 
@@ -61,7 +63,7 @@ public class ZooFoodServer extends ZooEmployee implements Subject{
 
     }
 
-    //Method for serving food
+    //Method for serving food, Notifies observers
     public void serveFood(){
 
         notifyObservers("serve food");
@@ -72,12 +74,19 @@ public class ZooFoodServer extends ZooEmployee implements Subject{
 
     }
 
+    //Method for cleaning up food
     public void cleanFood(){
 
         System.out.println("FOOD: " + getName() + " Is currently cleaning up food");
         System.out.println();
 
     }
+
+    /*
+    THis performFoodTasks method allows the FoodServer to perform their tasks according to the time.
+    This allows us to have a loop in the main function and not worry about there being hardcoded times
+    within main.
+     */
 
 
     public void performFoodTasks(Clock clock) {
@@ -121,6 +130,10 @@ public class ZooFoodServer extends ZooEmployee implements Subject{
         }
     }
 
+    /*
+    Simple method to make sure all tasks for the FoodServer are complete and they can leave for the
+    day.
+     */
     public boolean checkDone() {
 
         if (madeLunch && servedLunch && cleanedLunch && madeDinner && servedDinner && cleanedDinner){
@@ -131,6 +144,11 @@ public class ZooFoodServer extends ZooEmployee implements Subject{
         return false;
     }
 
+
+    /*
+    At the end of every day we will need to reset zoo tasks to false to allow the same loop to work the
+    next day of the zoo.
+     */
     public void taskReset() {
         this.madeLunch = false;
         this.servedLunch = false;

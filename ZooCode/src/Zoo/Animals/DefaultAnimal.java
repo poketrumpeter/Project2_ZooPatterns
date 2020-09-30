@@ -20,6 +20,15 @@ public abstract class DefaultAnimal implements Animal{
         return this.name;
     }
 
+    /*
+    This is the main place where the strategy pattern is being used. Rather than use inheritance with
+    the movement property of animals. Each animal will use this specific move function.
+    Each animmal has its own movement object that specifies how it will move/roam. All these
+    movements implement the interface AnimalMovement. When declaring animals, we initalize them with a
+    speciric movement to be able to move in the correct way. Currently the animal object doesnt know
+    the implementation for move, they just know which movement object they have.
+     */
+
     @Override
     public boolean move() {
 

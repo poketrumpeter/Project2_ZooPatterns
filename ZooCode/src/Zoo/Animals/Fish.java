@@ -29,8 +29,6 @@ public abstract class Fish extends DefaultAnimal{
 
         System.out.println(sleep);
 
-        System.out.println();
-
         return true;
 
     }
