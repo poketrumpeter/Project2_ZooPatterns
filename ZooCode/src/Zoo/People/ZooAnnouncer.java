@@ -12,6 +12,13 @@ public class ZooAnnouncer extends ZooEmployee implements Observer{
         super(name, "Zoo Announcer");
     }
 
+    /*
+    As an observer, the Announcer gets to know when the ZooKeeper and the FoodServer are doing
+    specific tasks. Because we are using an observer pattern, we are able to let the announcer
+    know when it needs to announce a specific tasks because it gets updates from any subjects
+    it may be observing.
+     */
+
     @Override
     public void update(ZooEmployee employee, String Task) {
 

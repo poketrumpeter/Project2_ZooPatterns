@@ -30,6 +30,10 @@ public class ZooKeeper extends ZooEmployee implements Subject{
         putAnimalsToSleep = false;
     }
 
+    /*
+    For the Observer pattern to be effective, the subject needs to be able to add observers so they
+    can update them. This is where the Zookeeper will add the Zooannouncer as an observer.
+     */
     @Override
     public void addObserver(Observer o) {
         observers.add(o);
@@ -44,6 +48,13 @@ public class ZooKeeper extends ZooEmployee implements Subject{
         }
     }
 
+    /*
+    This is where the Observer pattern is being applied. For Zookeeper and Zoo announcer this
+    matches and allows the zooAnnouncer object to recieve updates from each employee. Whenever this
+    notify observers is called the Zoo announcer will run its update function which announces the events
+    that are about to happen.
+     */
+
     @Override
     public void notifyObservers(String task) {
 
@@ -53,6 +64,8 @@ public class ZooKeeper extends ZooEmployee implements Subject{
         }
 
     }
+
+    //Method for waking up animals, Notifies observers about this task being done
 
     public void wakeAnimals(ArrayList<Animal> animalList) {
 
@@ -69,6 +82,8 @@ public class ZooKeeper extends ZooEmployee implements Subject{
 
     }
 
+    //Method for rollCalling animals, Will notify observers
+
     public void rollCallAnimals(ArrayList<Animal> animalList){
 
         AnimalTask rollCall = new RollCallAnimals();
@@ -81,6 +96,8 @@ public class ZooKeeper extends ZooEmployee implements Subject{
 
         rollCall.performTask(animalList);
     }
+
+    //Method for feeding all the animals in the zoo, Will notify observers
 
     public void feedAnimals(ArrayList<Animal> animalList){
 
@@ -95,6 +112,8 @@ public class ZooKeeper extends ZooEmployee implements Subject{
         feed.performTask(animalList);
     }
 
+    //Method for putting the animals to sleep. Will notify observers
+
     public void sleepAnimals(ArrayList<Animal> animalList){
 
         AnimalTask sleepAnimals = new SleepAnimals();
@@ -107,6 +126,8 @@ public class ZooKeeper extends ZooEmployee implements Subject{
 
         sleepAnimals.performTask(animalList);
     }
+
+    //Method for Exercising the animals in the zoo, will notify observers
 
     public void exerciseAnimals(ArrayList<Animal> animalList){
 
@@ -121,6 +142,9 @@ public class ZooKeeper extends ZooEmployee implements Subject{
         exercise.performTask(animalList);
     }
 
+    //Allows the zookeeper to perfrom their tasks based on the current time. This will allow us to
+    //not hardcode these tasks into main function. They are going to just do tasks based on the current
+    //time.
     public void performZooTasks(Clock clock, ArrayList<Animal> animalList) { //allows ZooEmployee to go through zookeeper methods
 
         if(clock.getTime() == 9){
@@ -159,6 +183,8 @@ public class ZooKeeper extends ZooEmployee implements Subject{
 
     }
 
+    //SImple method to check and see if the zookeepper has completed all of their tasks for the day
+
     public boolean checkDone() {
 
         if (wokeAnimals && rollCalledAnimals && fedAnimals && exercisedAnimals && putAnimalsToSleep){
@@ -168,6 +194,8 @@ public class ZooKeeper extends ZooEmployee implements Subject{
         }
         return false;
     }
+
+    //Need to reset task bools to false to allow the tasks to be done the next day.
 
     public void taskReset() {
         this.wokeAnimals = false;
